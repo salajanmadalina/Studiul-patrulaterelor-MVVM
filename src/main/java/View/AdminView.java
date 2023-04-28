@@ -163,8 +163,4 @@ public class AdminView extends JFrame {
         });
     }
 
-    public static void showMessage(String message){
-        JOptionPane.showMessageDialog(new JFrame(), message);
-    }
-
 }

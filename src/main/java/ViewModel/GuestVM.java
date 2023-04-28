@@ -62,10 +62,6 @@ public class GuestVM {
         return saveXML;
     }
 
-    public String getCerc() {
-        return cerc.get();
-    }
-
     public void setCerc(String cerc) {
         this.cerc.set(cerc);
     }

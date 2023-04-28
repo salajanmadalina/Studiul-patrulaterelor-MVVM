@@ -109,7 +109,4 @@ public class LogInView extends JFrame{
         });
     }
 
-    public static void showMessage(String message){
-        JOptionPane.showMessageDialog(new JFrame(), message);
-    }
 }

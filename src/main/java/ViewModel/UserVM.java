@@ -39,24 +39,12 @@ public class UserVM {
 
     public String getIdTest(){return idTest.get();}
 
-    public void setTextAnswers(String textAnswers) {
-        this.textAnswers.set(textAnswers);
-    }
-
     public void setTextScore(String textScore) {
         this.textScore.set(textScore);
     }
 
-    public String getTextArea() {
-        return textArea.get();
-    }
-
     public String getTextAnswers() {
         return textAnswers.get();
-    }
-
-    public String getTextScore() {
-        return textScore.get();
     }
 
     public ICommand getGenerateScore() {
