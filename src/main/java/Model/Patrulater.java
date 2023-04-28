@@ -127,6 +127,18 @@ public class Patrulater extends FiguraGeometrica{
         return cercInscris().toString() + " " + cercCircumscris().toString();
     }
 
+    public String punctMiguelStr(){
+        if(punctulMiquel() != null)
+            return punctulMiquel().getX() + " " + punctulMiquel().getY();
+        return "";
+    }
+
+    public String punctNewtonStr(){
+        if(punctulLuiNewton() != null)
+            return punctulLuiNewton().getX() + " " + punctulLuiNewton().getY();
+        return "";
+    }
+
     public Punct punctulLuiNewton() {
         if(razaCerculuiCircumscris() != 0){
             int x = Math.round((p1.getX() + p2.getX() + p3.getX() + p4.getX()) / 4);
@@ -237,9 +249,13 @@ public class Patrulater extends FiguraGeometrica{
         Punct p = punctulLuiNewton();
         if(p != null)
             information += "Punctul lui Newton este de coordonate " + p.getX() + ", " + p.getY() + ";\n";
+        else
+            information += "Punctul lui Newton nu poate fi calculat deoarece patrulaterul nu indeplineste conditiile necesare;\n";
         Punct q = punctulMiquel();
         if(q != null)
             information += "Punctul lui Miquel este de coordonate " + q.getX() + ", " + q.getY() + ";\n";
+        else
+            information += "Punctul lui Miguel nu poate fi calculat deoarece patrulaterul nu indeplineste conditiile necesare;\n";
 
         return information;
     }

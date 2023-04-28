@@ -15,12 +15,16 @@ public class GuestVM {
     private Property<String> myX;
     private Property<String> myY;
     private Property<String> cerc;
+    private Property<String> pMiguel;
+    private Property<String> pNewton;
 
     public GuestVM(){
         textArea = PropertyFactory.createProperty("textArea", this, String.class);
         myX = PropertyFactory.createProperty("myX", this, String.class);
         myY = PropertyFactory.createProperty("myY", this, String.class);
         cerc = PropertyFactory.createProperty("cerc", this, String.class);
+        pMiguel = PropertyFactory.createProperty("pMiguel", this, String.class);
+        pNewton = PropertyFactory.createProperty("pNewton", this, String.class);
         back = new CommandBack(this);
         createAccount = new CommandCreateAccount(this);
         showProperties = new CommandShowProperties(this);
@@ -64,5 +68,13 @@ public class GuestVM {
 
     public void setCerc(String cerc) {
         this.cerc.set(cerc);
+    }
+
+    public void setPMiguel(String pMiguel) {
+        this.pMiguel.set(pMiguel);
+    }
+
+    public void setPNewton(String pNewton) {
+        this.pNewton.set(pNewton);
     }
 }

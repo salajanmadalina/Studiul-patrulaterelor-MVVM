@@ -41,6 +41,10 @@ public class GuestView extends JFrame {
     private Graphics g;
     private Graphics g2;
     private MouseListener m2;
+    @Bind(value = "text", target = "pMiguel.value", type = BindingType.BI_DIRECTIONAL)
+    private JTextArea pMiguel = new JTextArea();
+    @Bind(value = "text", target = "pNewton.value", type = BindingType.BI_DIRECTIONAL)
+    private JTextArea pNewton = new JTextArea();
 
     public GuestView(){
         frame = new JFrame();
@@ -236,8 +240,14 @@ public class GuestView extends JFrame {
                 guestVM.getShowProperties().execute();
                 Graphics g3 = panelCircle.getGraphics();
                 String[] coords = cerc.getText().split(" ");
+                String[] punctMiguel = pMiguel.getText().split(" ");
+                String[] punctNewton = pNewton.getText().split(" ");
                 g3.drawOval((Integer.parseInt(coords[0]) - Integer.parseInt(coords[2])), (Integer.parseInt(coords[1]) - Integer.parseInt(coords[2])), 2 * Integer.parseInt(coords[2]), 2 * Integer.parseInt(coords[2]));
                 g3.drawOval((Integer.parseInt(coords[3]) - Integer.parseInt(coords[5])), (Integer.parseInt(coords[4]) - Integer.parseInt(coords[5])), 2 * Integer.parseInt(coords[5]), 2 * Integer.parseInt(coords[5]));
+                if(punctMiguel.length == 2)
+                    g3.fillRect(Integer.parseInt(punctMiguel[0]) - 3, Integer.parseInt(punctMiguel[1]) - 3, 8, 8);
+                if(punctNewton.length == 2)
+                    g3.fillRect(Integer.parseInt(punctNewton[0]) - 3, Integer.parseInt(punctNewton[1]) - 3, 8, 8);
             }
         });
 

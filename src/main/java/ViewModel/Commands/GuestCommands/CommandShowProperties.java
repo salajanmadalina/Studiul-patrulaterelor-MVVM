@@ -30,5 +30,7 @@ public class CommandShowProperties implements ICommand {
 
         guestVM.setTextArea(patrulater.toString());
         guestVM.setCerc(patrulater.cercuriStr());
+        guestVM.setPMiguel(patrulater.punctMiguelStr());
+        guestVM.setPNewton(patrulater.punctNewtonStr());
     }
 }
